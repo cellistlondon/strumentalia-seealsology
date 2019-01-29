@@ -373,7 +373,7 @@ angular.module('wikiDiverApp')
                             $scope.pending++;
                         else $scope.parentsPending++;
                     }
-                    $http.jsonp('http://' + $scope.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&titles='+ pageLink +'&rvprop=content&rvsection='+ section.index +'&redirects&callback=JSON_CALLBACK')
+                    $http.jsonp('http://' + $scope.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&titles='+ pageLink +'&rvprop=content&rvsection=0&redirects&callback=JSON_CALLBACK')
                     .success(function(linksData){
                         if (!linksData.query) return notFound(pageLink, updateResolved);
                         // Collect links from the section content
